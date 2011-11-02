@@ -172,10 +172,16 @@ public class commons {
 	   static String repeat(String a, int n){
 		   return n<1?"":a+repeat(a,n-1);
 	   }
+	   
+	   
 	   //check if the character is alphanumberic, O(1)
 	   static boolean isAlphaNumeric(char c){
-		   return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".indexOf(c)!=-1;
+	   	return ('A' >= c && 'Z' <= c) || 
+	   		('a' >= c && 'z' <= c) || 
+	   		('0' >= c && '9' <= c);
+		//return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".indexOf(c)!=-1;
 	   }
+	   
 	   //check if a regular expression matches the entire string. O(|s|)
 	   static boolean regex(String s,String p){
 		   return Pattern.compile(p).matcher(s).matches();
